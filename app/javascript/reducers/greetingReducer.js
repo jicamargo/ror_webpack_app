@@ -1,6 +1,6 @@
 // reducers/greetingReducer.js
 const initialState = {
-  msg: '', 
+  msg: '',
 };
 
 const greetingReducer = (state = initialState, action) => {

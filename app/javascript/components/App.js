@@ -2,7 +2,8 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchGreeting } from '../actions/greetingActions'; // Ajusta la ruta según tu estructura de archivos
+import PropTypes from 'prop-types';
+import fetchGreeting from '../actions/greetingActions';
 import Greeting from './Greeting';
 
 const App = ({ fetchGreeting }) => {
@@ -24,6 +25,10 @@ const App = ({ fetchGreeting }) => {
 
 const mapDispatchToProps = {
   fetchGreeting,
+};
+
+App.propTypes = {
+  fetchGreeting: PropTypes.func.isRequired,
 };
 
 export default connect(null, mapDispatchToProps)(App);
