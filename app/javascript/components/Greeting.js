@@ -1,13 +1,22 @@
-// app/javascript/components/Greeting.js
+// Greeting.js
 import React from 'react';
+import { connect } from 'react-redux';
 
-const Greeting = () => {
+const Greeting = ({ greeting }) => {
+  console.log('parametro greeting:');
+  console.log(greeting);
   return (
     <div>
-      <h2>Welcome to our app!</h2>
-      <p>This is a friendly greeting.</p>
+      <h2>{greeting}</h2>
     </div>
   );
 };
 
-export default Greeting;
+const mapStateToProps = (state) => {
+  console.log('mapStateToProps', state); 
+  return {
+    greeting: state.msg.msg, 
+  };
+};
+
+export default connect(mapStateToProps)(Greeting);
