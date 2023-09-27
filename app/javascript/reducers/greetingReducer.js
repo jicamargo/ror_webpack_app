@@ -1,13 +1,9 @@
 // reducers/greetingReducer.js
 const initialState = {
-  msg: 'Initial greeting', 
+  msg: '', 
 };
 
 const greetingReducer = (state = initialState, action) => {
-  console.log('greetingReducer action:');
-  console.log(action);
-  console.log('greetingReducer state:');
-  console.log(state)
   switch (action.type) {
     case 'SET_GREETING':
       return {

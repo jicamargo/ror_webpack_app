@@ -3,8 +3,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const Greeting = ({ greeting }) => {
-  console.log('parametro greeting:');
-  console.log(greeting);
   return (
     <div>
       <h2>{greeting}</h2>
@@ -12,11 +10,7 @@ const Greeting = ({ greeting }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  console.log('mapStateToProps', state); 
-  return {
+const mapStateToProps = (state) => ({
     greeting: state.msg.msg, 
-  };
-};
-
+});
 export default connect(mapStateToProps)(Greeting);

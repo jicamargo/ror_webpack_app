@@ -2,16 +2,14 @@
 export const fetchGreeting = () => {
   return async (dispatch) => {
     try {
-      const response = await fetch('/api/random_greeting'); // Ajusta la URL según tu endpoint de la API
+      const response = await fetch('/api/random_greeting'); 
       if (!response.ok) {
-        throw new Error('No se pudo obtener el saludo'); // Maneja errores de respuesta
+        throw new Error('Cannot fetch the greeting');
       }
       const data = await response.json();
-      console.log('fetchGreeting data:');
-      console.log(data);
-      dispatch({ type: 'SET_GREETING', payload: data.text }); // Actualiza el estado con el mensaje
+      dispatch({ type: 'SET_GREETING', payload: data.text }); 
     } catch (error) {
-      console.error('Error al obtener el saludo:', error);
+      console.error('Error fetching the greeting', error);
     }
   };
 };

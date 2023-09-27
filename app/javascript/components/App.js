@@ -7,14 +7,13 @@ import Greeting from './Greeting';
 
 const App = ({ fetchGreeting }) => {
   useEffect(() => {
-    console.log('App.js useEffect para llamar a fetchGreeting');
     fetchGreeting(); // get the greeting from the API on load
   }, [fetchGreeting]);
 
   return (
     <BrowserRouter>
       <div>
-        <h1>Welcome to RoR and React Example</h1>
+        <h1>Welcome to Rails-React App</h1>
         <Routes>
           <Route path="/" element={<Greeting />} />
         </Routes>
